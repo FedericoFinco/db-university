@@ -1,0 +1,61 @@
+
+---
+Selezionare tutti gli studenti nati nel 1990 (160).
+
+SELECT * 
+FROM `students`
+WHERE YEAR(`date_of_birth`) = 1990;
+
+---
+Selezionare tutti i icorsi che valgono piu di 10 crediti.
+
+SELECT *
+FROM `courses`
+WHERE `cfu` > 10;
+
+---
+Selezionare tutti gli studenti che hanno piu di 30 anni.
+
+SELECT * 
+FROM `students` 
+WHERE YEAR(`date_of_birth`) <= '1993-06-17';
+
+---
+Selezionare tutti i corsi del primo semestre e
+del primo anno di qualsiasi corso di laurea.
+
+SELECT COUNT(*) 
+FROM `courses`
+WHERE `period` = 'I semestre'
+AND `year` = 1;
+
+---
+Selezionare tutti gli appelli d'esame che avvengono dopo le 14
+del giorno 20/06/2020.
+
+SELECT COUNT(*) 
+FROM `exams`
+WHERE `hour` >= '14:00:00'  
+AND `date` = '2020-06-20';
+
+---
+Selezionare tutti i corsi di laurea magistrale.
+
+SELECT COUNT(*)
+FROM `degrees`
+WHERE `level` = 'magistrale';
+
+---
+Da quanti dipartimenti è composta l'università?
+
+SELECT COUNT(*)
+FROM `departments`;
+
+---
+Quanti sono gli insegnanti che non hanno un numero di telefono?
+
+SELECT COUNT(*)
+FROM `teachers`
+WHERE `phone` IS NULL;
+
+---
